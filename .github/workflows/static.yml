@@ -32,7 +32,7 @@ jobs:
 
       - name: Update data file 2
         run: |
-         sed -i 's@<p id="myname"></p>@<p id="myname">${{ env.MY_NAME }}</p>@g' index.html      
+         sed -i 's@<p id="myname"></p>@<p id="myname">${{ secrets.MY_SECRET_NAME }}</p>@g' index.html      
          cat index.html
 
       - name: Upload artifact
